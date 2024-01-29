@@ -58,11 +58,31 @@
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi optio quaerat quisquam eveniet molestias
         obcaecati animi, ipsa aliquam dignissimos adipisci.</p>
 
+    <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="toast()">Show live toast</button>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+
     <script>
         let paragraph = document.createElement('p');
         paragraph.innerHTML = `<b>Meow</b>`;
         paragraph.style.color = 'hotpink';
         document.querySelector('body').appendChild(paragraph);
+
+        function toast() {
+            document.getElementById('liveToast').style.display = 'block';
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
